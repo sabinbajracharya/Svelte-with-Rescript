@@ -83,7 +83,7 @@ let generateRandomNumber = () => {
       }
 
       errorMessage.update((_) => "")
-      randomNumber.update((_) =>newRandNumber)
+      randomNumber.update((_) => newRandNumber)
 
       Js.Promise.resolve(true)
     }, _)
