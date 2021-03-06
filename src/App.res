@@ -63,19 +63,23 @@ let randomNumberAPI = () => {
 }
 
 let fetchRandomNumber = () => {
+  open Js.Promise
+
   randomNumberAPI()
-    ->Js.Promise.then_(value => parser(value), _)
-    ->Js.Promise.then_(body => {
+    ->then_(value => parser(value), _)
+    ->then_(body => {
       Js.log(body)
-      Js.Promise.resolve(body)
+      resolve(body)
     }, _)
 }
 
 exception APIException(string)
 
 let generateRandomNumber = () => {
+  open Js.Promise
+
   fetchRandomNumber()
-    ->Js.Promise.then_(data => {
+    ->then_(data => {
 
       let newRandNumber = switch (Belt.Int.fromString(data)) {
         | Some(data) => data
@@ -85,16 +89,16 @@ let generateRandomNumber = () => {
       errorMessage.update((_) => "")
       randomNumber.update((_) => newRandNumber)
 
-      Js.Promise.resolve(true)
+      resolve(true)
     }, _)
-    ->Js.Promise.catch((_: Js.Promise.error) => {
+    ->catch((_) => {
       // We raised APIException, which gets converted to Js.Promise.error
       // No idea how to get the exception message from here, so now manually hardcoding the error message
       randomNumber.update((_) => 0)
       errorMessage.update((_) => {
         "The random number generator api is currently having a problem!"
       })
-      Js.Promise.resolve(false)
+      resolve(false)
     }, _)
 }
 
