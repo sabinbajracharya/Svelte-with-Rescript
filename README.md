@@ -1,7 +1,3 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
-
----
-
 # Svelte ❤️ ReScript
 
 This project is to demonstrate how to build Svelte apps using Rescript
@@ -18,4 +14,5 @@ $ npm i
 $ npm run dev # to run the Svelte dev server
 $ npm run re:watch # to run the ReScript Build System
 ```
+
 See also: [6020]: https://github.com/sveltejs/svelte/issues/6020
