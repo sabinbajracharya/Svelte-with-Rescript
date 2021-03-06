@@ -41,7 +41,7 @@ let randomNumber = writable(0);
 let errorMessage = writable("");
 
 /**
-* This is a simple parse to parse the string response from the api
+* This is a simple parser to parse the string response from the api
 **/
 let parser = (value: option<Response.t>): Js.Promise.t<string> => {
   switch (value) {
