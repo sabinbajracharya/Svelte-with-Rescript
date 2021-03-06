@@ -15,6 +15,7 @@ $ npm run dev # to run the Svelte dev server
 $ npm run re:watch # to run the ReScript Build System
 ```
 
+
 ## How it works
 - The code written in ReScript is compiled to javascript file (by ReScript build system) which is imported in the *.svelte file. 
 - So, in Svelte file we have html, css, and javascript code to subscribe to Svelte store (written in Rescript)
@@ -22,6 +23,8 @@ $ npm run re:watch # to run the ReScript Build System
 - Note: You can't write ReScript in *.svelte file itself.
 
 ---
+
+![newplot(1)](https://github.com/sabinbajracharya/Svelte-with-Rescript/blob/master/screenshot/screenshot-1.png)
 
 See also: [6020]: https://github.com/sveltejs/svelte/issues/6020
 
